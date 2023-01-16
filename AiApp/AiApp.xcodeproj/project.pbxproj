@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BCD99CF2975ACE000439881 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BCD99CE2975ACE000439881 /* OpenAISwift */; };
 		C0156727297585C400DED0B8 /* AiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0156726297585C400DED0B8 /* AiAppApp.swift */; };
 		C0156729297585C400DED0B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0156728297585C400DED0B8 /* ContentView.swift */; };
 		C015672B297585C500DED0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672A297585C500DED0B8 /* Assets.xcassets */; };
 		C015672E297585C500DED0B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672D297585C500DED0B8 /* Preview Assets.xcassets */; };
 		C01567382975867800DED0B8 /* TestModel_ToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01567372975867800DED0B8 /* TestModel_ToDelete.swift */; };
-		C015673A2975868800DED0B8 /* TestViewModel_ToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */; };
+		C015673A2975868800DED0B8 /* ChatGPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01567392975868800DED0B8 /* ChatGPTViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BCD99D02975AD5300439881 /* AiApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = AiApp.entitlements; sourceTree = "<group>"; };
 		C0156723297585C400DED0B8 /* AiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0156726297585C400DED0B8 /* AiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiAppApp.swift; sourceTree = "<group>"; };
 		C0156728297585C400DED0B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C015672A297585C500DED0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C015672D297585C500DED0B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C01567372975867800DED0B8 /* TestModel_ToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel_ToDelete.swift; sourceTree = "<group>"; };
-		C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel_ToDelete.swift; sourceTree = "<group>"; };
+		C01567392975868800DED0B8 /* ChatGPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +32,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BCD99CF2975ACE000439881 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BCD99D12975ADD100439881 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C015671A297585C400DED0B8 = {
 			isa = PBXGroup;
 			children = (
 				C0156725297585C400DED0B8 /* AiApp */,
 				C0156724297585C400DED0B8 /* Products */,
+				7BCD99D12975ADD100439881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +70,7 @@
 				C01567352975862900DED0B8 /* Views */,
 				C01567342975862000DED0B8 /* Model */,
 				C0156726297585C400DED0B8 /* AiAppApp.swift */,
+				7BCD99D02975AD5300439881 /* AiApp.entitlements */,
 				C015672A297585C500DED0B8 /* Assets.xcassets */,
 				C015672C297585C500DED0B8 /* Preview Content */,
 			);
@@ -92,7 +104,7 @@
 		C01567362975863000DED0B8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */,
+				C01567392975868800DED0B8 /* ChatGPTViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +125,9 @@
 			dependencies = (
 			);
 			name = AiApp;
+			packageProductDependencies = (
+				7BCD99CE2975ACE000439881 /* OpenAISwift */,
+			);
 			productName = AiApp;
 			productReference = C0156723297585C400DED0B8 /* AiApp.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +156,9 @@
 				Base,
 			);
 			mainGroup = C015671A297585C400DED0B8;
+			packageReferences = (
+				7BCD99CD2975ACE000439881 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = C0156724297585C400DED0B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C015673A2975868800DED0B8 /* TestViewModel_ToDelete.swift in Sources */,
+				C015673A2975868800DED0B8 /* ChatGPTViewModel.swift in Sources */,
 				C0156729297585C400DED0B8 /* ContentView.swift in Sources */,
 				C01567382975867800DED0B8 /* TestModel_ToDelete.swift in Sources */,
 				C0156727297585C400DED0B8 /* AiAppApp.swift in Sources */,
@@ -307,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,6 +355,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BCD99CD2975ACE000439881 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BCD99CE2975ACE000439881 /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BCD99CD2975ACE000439881 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C015671B297585C400DED0B8 /* Project object */;
 }
