@@ -11,6 +11,8 @@
 		C0156729297585C400DED0B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0156728297585C400DED0B8 /* ContentView.swift */; };
 		C015672B297585C500DED0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672A297585C500DED0B8 /* Assets.xcassets */; };
 		C015672E297585C500DED0B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672D297585C500DED0B8 /* Preview Assets.xcassets */; };
+		C01567382975867800DED0B8 /* TestModel_ToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01567372975867800DED0B8 /* TestModel_ToDelete.swift */; };
+		C015673A2975868800DED0B8 /* TestViewModel_ToDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C0156728297585C400DED0B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C015672A297585C500DED0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C015672D297585C500DED0B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C01567372975867800DED0B8 /* TestModel_ToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel_ToDelete.swift; sourceTree = "<group>"; };
+		C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel_ToDelete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,10 @@
 		C0156725297585C400DED0B8 /* AiApp */ = {
 			isa = PBXGroup;
 			children = (
+				C01567362975863000DED0B8 /* ViewModel */,
+				C01567352975862900DED0B8 /* Views */,
+				C01567342975862000DED0B8 /* Model */,
 				C0156726297585C400DED0B8 /* AiAppApp.swift */,
-				C0156728297585C400DED0B8 /* ContentView.swift */,
 				C015672A297585C500DED0B8 /* Assets.xcassets */,
 				C015672C297585C500DED0B8 /* Preview Content */,
 			);
@@ -65,6 +71,30 @@
 				C015672D297585C500DED0B8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C01567342975862000DED0B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C01567372975867800DED0B8 /* TestModel_ToDelete.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C01567352975862900DED0B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0156728297585C400DED0B8 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C01567362975863000DED0B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C01567392975868800DED0B8 /* TestViewModel_ToDelete.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C015673A2975868800DED0B8 /* TestViewModel_ToDelete.swift in Sources */,
 				C0156729297585C400DED0B8 /* ContentView.swift in Sources */,
+				C01567382975867800DED0B8 /* TestModel_ToDelete.swift in Sources */,
 				C0156727297585C400DED0B8 /* AiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
