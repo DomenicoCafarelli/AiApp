@@ -7,66 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C08B952E297428660028760B /* AiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B952D297428660028760B /* AiAppApp.swift */; };
-		C08B9530297428660028760B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B952F297428660028760B /* ContentView.swift */; };
-		C08B9532297428670028760B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08B9531297428670028760B /* Assets.xcassets */; };
-		C08B9535297428670028760B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C08B9534297428670028760B /* Preview Assets.xcassets */; };
-		C08B953D297428CE0028760B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C08B953C297428CE0028760B /* SwiftyJSON */; };
-		C08B9540297428DA0028760B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C08B953F297428DA0028760B /* Alamofire */; };
+		C0156727297585C400DED0B8 /* AiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0156726297585C400DED0B8 /* AiAppApp.swift */; };
+		C0156729297585C400DED0B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0156728297585C400DED0B8 /* ContentView.swift */; };
+		C015672B297585C500DED0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672A297585C500DED0B8 /* Assets.xcassets */; };
+		C015672E297585C500DED0B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C015672D297585C500DED0B8 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C08B952A297428660028760B /* AiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08B952D297428660028760B /* AiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiAppApp.swift; sourceTree = "<group>"; };
-		C08B952F297428660028760B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C08B9531297428670028760B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C08B9534297428670028760B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C0156723297585C400DED0B8 /* AiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0156726297585C400DED0B8 /* AiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiAppApp.swift; sourceTree = "<group>"; };
+		C0156728297585C400DED0B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C015672A297585C500DED0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C015672D297585C500DED0B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C08B9527297428660028760B /* Frameworks */ = {
+		C0156720297585C400DED0B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08B953D297428CE0028760B /* SwiftyJSON in Frameworks */,
-				C08B9540297428DA0028760B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C08B9521297428660028760B = {
+		C015671A297585C400DED0B8 = {
 			isa = PBXGroup;
 			children = (
-				C08B952C297428660028760B /* AiApp */,
-				C08B952B297428660028760B /* Products */,
+				C0156725297585C400DED0B8 /* AiApp */,
+				C0156724297585C400DED0B8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C08B952B297428660028760B /* Products */ = {
+		C0156724297585C400DED0B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C08B952A297428660028760B /* AiApp.app */,
+				C0156723297585C400DED0B8 /* AiApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C08B952C297428660028760B /* AiApp */ = {
+		C0156725297585C400DED0B8 /* AiApp */ = {
 			isa = PBXGroup;
 			children = (
-				C08B952D297428660028760B /* AiAppApp.swift */,
-				C08B952F297428660028760B /* ContentView.swift */,
-				C08B9531297428670028760B /* Assets.xcassets */,
-				C08B9533297428670028760B /* Preview Content */,
+				C0156726297585C400DED0B8 /* AiAppApp.swift */,
+				C0156728297585C400DED0B8 /* ContentView.swift */,
+				C015672A297585C500DED0B8 /* Assets.xcassets */,
+				C015672C297585C500DED0B8 /* Preview Content */,
 			);
 			path = AiApp;
 			sourceTree = "<group>";
 		};
-		C08B9533297428670028760B /* Preview Content */ = {
+		C015672C297585C500DED0B8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C08B9534297428670028760B /* Preview Assets.xcassets */,
+				C015672D297585C500DED0B8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -74,43 +70,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C08B9529297428660028760B /* AiApp */ = {
+		C0156722297585C400DED0B8 /* AiApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C08B9538297428670028760B /* Build configuration list for PBXNativeTarget "AiApp" */;
+			buildConfigurationList = C0156731297585C500DED0B8 /* Build configuration list for PBXNativeTarget "AiApp" */;
 			buildPhases = (
-				C08B9526297428660028760B /* Sources */,
-				C08B9527297428660028760B /* Frameworks */,
-				C08B9528297428660028760B /* Resources */,
+				C015671F297585C400DED0B8 /* Sources */,
+				C0156720297585C400DED0B8 /* Frameworks */,
+				C0156721297585C400DED0B8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = AiApp;
-			packageProductDependencies = (
-				C08B953C297428CE0028760B /* SwiftyJSON */,
-				C08B953F297428DA0028760B /* Alamofire */,
-			);
 			productName = AiApp;
-			productReference = C08B952A297428660028760B /* AiApp.app */;
+			productReference = C0156723297585C400DED0B8 /* AiApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C08B9522297428660028760B /* Project object */ = {
+		C015671B297585C400DED0B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					C08B9529297428660028760B = {
+					C0156722297585C400DED0B8 = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = C08B9525297428660028760B /* Build configuration list for PBXProject "AiApp" */;
+			buildConfigurationList = C015671E297585C400DED0B8 /* Build configuration list for PBXProject "AiApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,46 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = C08B9521297428660028760B;
-			packageReferences = (
-				C08B953B297428CE0028760B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				C08B953E297428DA0028760B /* XCRemoteSwiftPackageReference "Alamofire" */,
-			);
-			productRefGroup = C08B952B297428660028760B /* Products */;
+			mainGroup = C015671A297585C400DED0B8;
+			productRefGroup = C0156724297585C400DED0B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C08B9529297428660028760B /* AiApp */,
+				C0156722297585C400DED0B8 /* AiApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C08B9528297428660028760B /* Resources */ = {
+		C0156721297585C400DED0B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08B9535297428670028760B /* Preview Assets.xcassets in Resources */,
-				C08B9532297428670028760B /* Assets.xcassets in Resources */,
+				C015672E297585C500DED0B8 /* Preview Assets.xcassets in Resources */,
+				C015672B297585C500DED0B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C08B9526297428660028760B /* Sources */ = {
+		C015671F297585C400DED0B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C08B9530297428660028760B /* ContentView.swift in Sources */,
-				C08B952E297428660028760B /* AiAppApp.swift in Sources */,
+				C0156729297585C400DED0B8 /* ContentView.swift in Sources */,
+				C0156727297585C400DED0B8 /* AiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C08B9536297428670028760B /* Debug */ = {
+		C015672F297585C500DED0B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		C08B9537297428670028760B /* Release */ = {
+		C0156730297585C500DED0B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -271,7 +259,7 @@
 			};
 			name = Release;
 		};
-		C08B9539297428670028760B /* Debug */ = {
+		C0156732297585C500DED0B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -292,7 +280,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DomenicoCafarelli.AiApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevelopmentDynamos.ai.AiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -300,7 +288,7 @@
 			};
 			name = Debug;
 		};
-		C08B953A297428670028760B /* Release */ = {
+		C0156733297585C500DED0B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -321,7 +309,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.DomenicoCafarelli.AiApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DevelopmentDynamos.ai.AiApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -332,57 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C08B9525297428660028760B /* Build configuration list for PBXProject "AiApp" */ = {
+		C015671E297585C400DED0B8 /* Build configuration list for PBXProject "AiApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C08B9536297428670028760B /* Debug */,
-				C08B9537297428670028760B /* Release */,
+				C015672F297585C500DED0B8 /* Debug */,
+				C0156730297585C500DED0B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C08B9538297428670028760B /* Build configuration list for PBXNativeTarget "AiApp" */ = {
+		C0156731297585C500DED0B8 /* Build configuration list for PBXNativeTarget "AiApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C08B9539297428670028760B /* Debug */,
-				C08B953A297428670028760B /* Release */,
+				C0156732297585C500DED0B8 /* Debug */,
+				C0156733297585C500DED0B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C08B953B297428CE0028760B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		C08B953E297428DA0028760B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C08B953C297428CE0028760B /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C08B953B297428CE0028760B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		C08B953F297428DA0028760B /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C08B953E297428DA0028760B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = C08B9522297428660028760B /* Project object */;
+	rootObject = C015671B297585C400DED0B8 /* Project object */;
 }
