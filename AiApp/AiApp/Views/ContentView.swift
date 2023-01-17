@@ -13,6 +13,7 @@ struct ContentView: View {
     let title: String
     @State var text = ""
     @Namespace var bottomID
+    @State private var responseWaiting = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -22,15 +23,15 @@ struct ContentView: View {
                         if string.contains("You"){
                             VStack{
                                 Text("You")
-                                    .font(.system(size: 12.0))
-                                    .foregroundColor(.blue.opacity(0.6))
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.blue)
                                     .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
                                 //.padding(.bottom, -10)
                                 
                                 Text(string.replacing("You:", with: ""))
                                     .foregroundColor(.white)
                                     .padding(10)
-                                    .background(Color("me"))
+                                    .background(Color.blue)
                                     .cornerRadius(10)
                                     .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
                                 
@@ -45,15 +46,15 @@ struct ContentView: View {
                             
                             VStack{
                                 Text("ChatGPT")
-                                    .font(.system(size: 12.0))
-                                    .foregroundColor(.red.opacity(0.6))
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.green)
                                     .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
                                 //.padding(.bottom, -10)
                                 
                                 Text(string.replacing("ChatGPT:", with: ""))
                                     .foregroundColor(.primary)
                                     .padding(10)
-                                    .background(Color("bot"))
+                                    .background(Color(UIColor.systemGray5))
                                     .cornerRadius(10)
                                     .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
                                 
@@ -67,6 +68,7 @@ struct ContentView: View {
                 }//ScrollView
                 .onChange(of: viewModel.models.last) { _ in
                     proxy.scrollTo(bottomID)
+                    responseWaiting.toggle()
                 }
             }//ScrollViewReader
             
@@ -85,7 +87,6 @@ struct ContentView: View {
                 TextField("Type here ...", text: $text)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 10)
-                    .background(Color("textBox"))
                     .cornerRadius(100)
                     .background(RoundedRectangle(cornerRadius: 100, style: .continuous)
                         .stroke(.gray.opacity(0.6), lineWidth: 1.5))
@@ -93,10 +94,12 @@ struct ContentView: View {
                 Button{
                     viewModel.sendApiRequest(text: text)
                     text = ""
+                    self.hideKeyboard()
+                    responseWaiting = true
                 }label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.system(size: 35))
-                        .foregroundColor(Color("icon"))
+                        .foregroundColor(.blue)
                 }//Button
                 .padding(5)
                 .cornerRadius(100)
@@ -108,7 +111,9 @@ struct ContentView: View {
         .onAppear{
             viewModel.setup()
         }
-        .background(Color("bg"))
+        .onTapGesture {
+            self.hideKeyboard()
+        }
         
     }//body
     
