@@ -11,15 +11,39 @@ import SwiftUI
 final class ChatGPTViewModel : ObservableObject {
     init() {}
     
+    @Published var models = [String]()
+    
+    let topics = [
+    Topic(title: "School"),
+    Topic(title: "Tech"),
+    Topic(title: "Design")
+    ]
+    
     private var client: OpenAISwift?
     
     // setting up the client req
     func setup(){
-        client  = OpenAISwift(authToken:"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")
+        client  = OpenAISwift(authToken:"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")
+    }
+    
+    //Func that the view uses to send the request
+    func sendApiRequest(text: String){
+        // return nothing if user types noting
+        guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return
+        }
+        let text2  = text
+        models.append("You:\(text2)")
+        
+        send(text: text2) { response in
+            DispatchQueue.main.async {
+                self.models.append("ChatGPT:" + response.trimmingCharacters(in: .whitespacesAndNewlines))
+            }
+        }
     }
     
     // sending api text to server
-    func send(text: String, completion: @escaping (String)->Void){
+    private func send(text: String, completion: @escaping (String)->Void){
         client?.sendCompletion(with: text, maxTokens: 500, completionHandler: { result in
             
             switch result {

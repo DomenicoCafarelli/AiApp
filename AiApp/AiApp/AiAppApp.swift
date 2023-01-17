@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct AiAppApp: App {
+    @StateObject var viewModel = ChatGPTViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(viewModel)
         }
     }
 }
