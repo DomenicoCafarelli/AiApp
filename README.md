@@ -4,10 +4,12 @@
 
 Development Dynamos is a group formed by
 
-- 2 Developers
+- 2 **Developers**
   - Domenico Cafarelli
   - Vincenzo Pascarella
-- 2 Project Managers
+
+
+- 2 **Project Managers**
   - Marco Cucci
   - Ivan Esposito
 
