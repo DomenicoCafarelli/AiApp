@@ -253,3 +253,242 @@ final class ChatGPTViewModel : ObservableObject {
     }
 }
 ```
+### ContentView
+
+This code defines a SwiftUI View called **`ContentView`** that is used to display the chatbot interface. It has the following properties and methods:
+
+- **`viewModel`**: A reference to an instance of **`ChatGPTViewModel`** that is passed in as an environment object.
+
+```swift
+@EnvironmentObject var viewModel: ChatGPTViewModel
+```
+
+- **`title`**: A string that represents the title of the view.
+
+```swift
+let title: String
+```
+
+- **`text`**: A state variable that holds the current text entered by the user in the text field.
+
+```swift
+@State var text = ""
+```
+
+- **`bottomID`**: An instance of **`Namespace`** that is used to identify the bottom of the scroll view for scrolling purposes.
+
+```swift
+@Namespace var bottomID
+```
+
+- **`responseWaiting`**: A state variable that keeps track of whether the view is waiting for a response from the chatbot.
+
+```swift
+@State private var responseWaiting = false
+```
+
+The **`body`** property returns the content of the view, which is a vertical stack containing:
+
+- A **`ScrollViewReader`** that contains a **`ScrollView`** displaying the chat history, where each message is displayed in a VStack with a label showing the sender and a text message, colored and formatted differently depending on whether it is from the user or the chatbot.
+
+```swift
+ScrollViewReader{ proxy in
+                ScrollView (.vertical, showsIndicators: true) {
+                    ForEach(viewModel.models, id: \.self.hashValue) { string in
+                        if string.contains("You"){
+                            VStack{
+                                Text("You")
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.blue)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
+                                
+                                Text(string.replacing("You:", with: ""))
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
+                                
+                            }//VStack closure
+                            .padding(.bottom, 10)
+                            // for DEBUGGING you can click on the question you made to see all the struct printed in consolle
+                            .onTapGesture {
+                                print(viewModel.models)
+                            }
+                            
+                        } else {
+                            
+                            VStack{
+                                Text("ChatGPT")
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.green)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                
+                                Text(string.replacing("ChatGPT:", with: ""))
+                                    .foregroundColor(.primary)
+                                    .padding(10)
+                                    .background(Color(UIColor.systemGray5))
+                                    .cornerRadius(10)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                
+                            }//Vstack closure
+                        }//else closure
+                    }//ForEach closure
+
+                    Spacer().id(bottomID)
+
+                }//ScrollView closure
+
+								// Add the onChange here (next step) 
+
+            }//ScrollViewReader closure
+```
+
+The **`onChange`** of the **`viewModel.models.last`** value, it triggers the proxy to scroll to the bottom of the view and toggle the responseWaiting state variable. The text field is cleared and the keyboard is hidden after the button is pressed. You can add it between the ScrollView closure and the ScrollviewReader closure
+
+```swift
+.onChange(of: viewModel.models.last) { _ in
+                    proxy.scrollTo(bottomID)
+                    responseWaiting.toggle()
+                }
+```
+
+- A Horizontal Stack containing a text field for user input and a button that sends the text to the **`ChatGPTViewModel`** to make an API call to the chatbot.
+
+```swift
+HStack(alignment: .center, spacing: 2){
+                
+                TextField("Type here ...", text: $text)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 10)
+                    .cornerRadius(100)
+                    .background(RoundedRectangle(cornerRadius: 100, style: .continuous)
+                        .stroke(.gray.opacity(0.6), lineWidth: 1.5))
+                
+                Button{
+                    viewModel.sendApiRequest(text: text)
+                    text = ""
+                    self.hideKeyboard()
+                    responseWaiting = true
+                }label: {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.system(size: 35))
+                        .foregroundColor(.blue)
+                }//Button closure
+                .padding(5)
+                .cornerRadius(100)
+            }//Hstack closure
+```
+
+Whole code: 
+
+```swift
+import OpenAISwift
+import SwiftUI
+
+struct ContentView: View {
+    @EnvironmentObject var viewModel: ChatGPTViewModel
+    let title: String
+    @State var text = ""
+    @Namespace var bottomID
+    @State private var responseWaiting = false
+    
+    var body: some View {
+        VStack(alignment: .center) {
+            ScrollViewReader{ proxy in
+                ScrollView (.vertical, showsIndicators: true) {
+                    ForEach(viewModel.models, id: \.self.hashValue) { string in
+                        if string.contains("You"){
+                            VStack{
+                                Text("You")
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.blue)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
+                                
+                                Text(string.replacing("You:", with: ""))
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
+                                
+                            }//VStack closure
+                            .padding(.bottom, 10)
+                            //DEBUG
+                            .onTapGesture {
+                                print(viewModel.models)
+                            }
+                            
+                        } else {
+                            
+                            VStack{
+                                Text("ChatGPT")
+                                    .font(.system(size: 16.0))
+                                    .foregroundColor(.green)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                
+                                Text(string.replacing("ChatGPT:", with: ""))
+                                    .foregroundColor(.primary)
+                                    .padding(10)
+                                    .background(Color(UIColor.systemGray5))
+                                    .cornerRadius(10)
+                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                
+                            }//Vstack closure
+                            
+                        }//else closure
+                        
+                    }//ForEach closure
+                    Spacer().id(bottomID)
+
+                }//ScrollView closure
+                .onChange(of: viewModel.models.last) { _ in
+                    proxy.scrollTo(bottomID)
+                    responseWaiting.toggle()
+                }
+            }//ScrollViewReader closure
+            
+            HStack(alignment: .center, spacing: 2){
+                
+                TextField("Type here ...", text: $text)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 10)
+                    .cornerRadius(100)
+                    .background(RoundedRectangle(cornerRadius: 100, style: .continuous)
+                        .stroke(.gray.opacity(0.6), lineWidth: 1.5))
+                
+                Button{
+                    viewModel.sendApiRequest(text: text)
+                    text = ""
+                    self.hideKeyboard()
+                    responseWaiting = true
+                }label: {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.system(size: 35))
+                        .foregroundColor(.blue)
+                }//Button closure
+                .padding(5)
+                .cornerRadius(100)
+            }//Hstack closure
+            
+        }//Vstack closure
+        .navigationTitle(title)
+        .padding(10)
+        .onAppear{
+            viewModel.setup()
+        }
+        .onTapGesture {
+            self.hideKeyboard()
+        }
+        
+    }//body closure
+    
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(title: "SchoolProva")
+            .environmentObject(ChatGPTViewModel())
+    }
+}
+```
