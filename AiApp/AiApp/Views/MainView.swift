@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var viewModel: ChatGPTViewModel
-    
     var body: some View {
         NavigationStack{
             VStack{

@@ -8,7 +8,10 @@
 import OpenAISwift
 import SwiftUI
 
+
+
 final class ChatGPTViewModel : ObservableObject {
+    
     init() {}
     
     @Published var models = [String]()
@@ -23,7 +26,7 @@ final class ChatGPTViewModel : ObservableObject {
     
     // setting up the client req
     func setup(){
-        client  = OpenAISwift(authToken:"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")
+        client  = OpenAISwift(authToken:"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")
     }
     
     //Func that the view uses to send the request
@@ -32,6 +35,7 @@ final class ChatGPTViewModel : ObservableObject {
         guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             return
         }
+        
         let text2  = text
         models.append("You:\(text2)")
         
