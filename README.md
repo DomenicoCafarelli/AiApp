@@ -492,3 +492,83 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+### MainView
+
+This code defines a SwiftUI View called **`MainView`** that is used to display the main view of the chatbot app. It has the following properties and methods:
+
+- **`viewModel`**: A reference to an instance of **`ChatGPTViewModel`** that is passed in as an environment object.
+
+```swift
+@EnvironmentObject var viewModel: ChatGPTViewModel
+```
+
+The **`body`** property returns the content of the view, which is a **`NavigationStack`** containing a vertical stack with a **`ForEach`** loop that iterates through the **`topics`** array of **`ChatGPTViewModel`**. 
+
+For each topic, there is a **`NavigationLink`** that pushes to a **`ContentView`** with the title of the topic as the parameter. 
+
+The label of the **`NavigationLink`** is a **`ButtonTopicSelection`** view, with the title of the topic as the text parameter.
+
+```swift
+NavigationStack{
+            VStack{
+                Spacer()
+                
+                ForEach(viewModel.topics){ topic in
+                    
+                    NavigationLink {
+                        ContentView(title: topic.title)
+                    } label: {
+                        ButtonTopicSelection(text: topic.title)
+                    }
+                    
+                    Spacer()
+                }
+            }
+        }
+```
+
+The **`MainView_Previews`** struct provides a preview of the **`MainView`** using a **`ChatGPTViewModel`** instance as the environment object.
+
+```swift
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+            .environmentObject(ChatGPTViewModel())
+    }
+}
+```
+
+Whole code: 
+
+```swift
+import SwiftUI
+
+struct MainView: View {
+    @EnvironmentObject var viewModel: ChatGPTViewModel
+    var body: some View {
+        NavigationStack{
+            VStack{
+                Spacer()
+                
+                ForEach(viewModel.topics){ topic in
+                    
+                    NavigationLink {
+                        ContentView(title: topic.title)
+                    } label: {
+                        ButtonTopicSelection(text: topic.title)
+                    }
+                    
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+            .environmentObject(ChatGPTViewModel())
+    }
+}
+```
