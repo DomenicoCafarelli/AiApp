@@ -30,40 +30,6 @@ We have different goals
 
 ## Code Documentation
 
-Our project was built with SwiftUI Framework 
-
-1. The first step is to import the Framework
-
-```swift
-import SwiftUI
-```
-
-2. Then we have to create the ContentView() to build our view
-
-```swift
-struct ContentView: View {
-    var body: some View {
-        
-    }
-}
-```
-
-At this point we will receive an error just because our body is empty, so to avoid this we have to put something inside. 
-
-3. Let’s put inside the body a VStack{} 
-
-```swift
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            // put inside the elements that you would like to show vertically
-        }
-    }
-}
-```
-
-----------------------
-
 ### ChatGPTViewModel
 
 This code defines a class called **`ChatGPTViewModel`**
@@ -253,6 +219,9 @@ final class ChatGPTViewModel : ObservableObject {
     }
 }
 ```
+
+----------------------
+
 ### ContentView
 
 This code defines a SwiftUI View called **`ContentView`** that is used to display the chatbot interface. It has the following properties and methods:
@@ -492,6 +461,9 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+
+----------------------
+
 ### MainView
 
 This code defines a SwiftUI View called **`MainView`** that is used to display the main view of the chatbot app. It has the following properties and methods:
