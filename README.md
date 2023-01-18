@@ -20,7 +20,7 @@ Development Dynamos is a group formed by
 
 ### Artefact Description
 
-For this challenge we have different goals 
+We have different goals 
 
 - As **Group** we want to push until the 20th of January the app on App Store Connect.
 - As **Developers** we want also to write a brief documentation to showcase our coding skills
