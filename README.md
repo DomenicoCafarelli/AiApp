@@ -11,7 +11,7 @@ Development Dynamos is a group formed by
   - Marco Cucci
   - Ivan Esposito
 
-### Finalised solution statement
+### Solution statement
 
 > *An App for **iOS Developers** who wants to practice with Mock-Interviews*
 > 
