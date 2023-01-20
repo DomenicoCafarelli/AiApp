@@ -34,7 +34,7 @@
 		C015672A297585C500DED0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C015672D297585C500DED0B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C01567372975867800DED0B8 /* TestModel_ToDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel_ToDelete.swift; sourceTree = "<group>"; };
-		C01567392975868800DED0B8 /* ChatGPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatGPTViewModel.swift; path = "/Users/vincenzopascarella/Documents/The Pier/AiApp/AiApp/AiApp/ViewModel/ChatGPTViewModel.swift"; sourceTree = "<absolute>"; };
+		C01567392975868800DED0B8 /* ChatGPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
