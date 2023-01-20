@@ -24,7 +24,7 @@ final class ChatGPTViewModel : ObservableObject {
     ]
     
     private var client: OpenAISwift?
-//    
+
     /// It sets the token used to have access at the OpenAI API
     ///
     /// To use this function you need to paste your token instead of the PASTEHERE placeholder
