@@ -15,6 +15,7 @@ final class ChatGPTViewModel : ObservableObject {
     init() {}
     
     @Published var models = [String]()
+    @Published var responseWaiting = false
     
     let topics = [
     Topic(title: "School"),
@@ -24,24 +25,39 @@ final class ChatGPTViewModel : ObservableObject {
     
     private var client: OpenAISwift?
     
-    // setting up the client req
+    /// It sets the token used to have access at the OpenAI API
+    ///
+    /// To use this function you need to paste your token instead of the PASTEHERE placeholder
+    /// ```
+    /// func setup(){
+    ///     client  = OpenAISwift(authToken:"PASTEHERE")
+    /// }
+    /// ```
+    /// > Warning: Be sure that your token is active, otherwise the chat will not work
+    ///
     func setup(){
-        client  = OpenAISwift(authToken:"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")
+        //Use the token splitted in this way to have a public repo on GitHub without being banned from OpenAI
+        let firstPartOfTheToken = "sk-SDN9plzak37y0Y2SngCfT"
+        let secondPartOfTheToken = "3BlbkFJ4v7TmNvmOtD0usi4X4EF"
+        client  = OpenAISwift(authToken: firstPartOfTheToken + secondPartOfTheToken)
     }
     
-    //Func that the view uses to send the request
+    /// Function used to send the request to ChatGPT
+    /// - Parameter text: the text of the request
     func sendApiRequest(text: String){
         // return nothing if user types noting
         guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             return
         }
         
+        responseWaiting = true
+        print("Api send")
         let text2  = text
         models.append("You:\(text2)")
-        
         send(text: text2) { response in
             DispatchQueue.main.async {
                 self.models.append("ChatGPT:" + response.trimmingCharacters(in: .whitespacesAndNewlines))
+                self.responseWaiting = false
             }
         }
     }

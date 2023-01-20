@@ -31,7 +31,7 @@ struct ContentView: View {
                                 Text(string.replacing("You:", with: ""))
                                     .foregroundColor(.white)
                                     .padding(10)
-                                    .background(Color.blue)
+                                    .background(responseWaiting ? Color.red : Color.blue)
                                     .cornerRadius(10)
                                     .frame(width: UIScreen.main.bounds.width-20, alignment: .trailing)
                                 
@@ -40,35 +40,62 @@ struct ContentView: View {
                             //DEBUG
                             .onTapGesture {
                                 print(viewModel.models)
+                                print(viewModel.responseWaiting)
                             }
                             
                         } else {
-                            
-                            VStack{
-                                Text("ChatGPT")
-                                    .font(.system(size: 16.0))
-                                    .foregroundColor(.green)
-                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
-                                //.padding(.bottom, -10)
-                                
-                                Text(string.replacing("ChatGPT:", with: ""))
-                                    .foregroundColor(.primary)
-                                    .padding(10)
-                                    .background(Color(UIColor.systemGray5))
-                                    .cornerRadius(10)
-                                    .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
-                                
-                            }//Vstack
-                            
+                            if (viewModel.models.last != string){
+                                VStack{
+                                    Text("ChatGPT")
+                                        .font(.system(size: 16.0))
+                                        .foregroundColor(.green)
+                                        .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                    //.padding(.bottom, -10)
+                                    
+                                    Text(string.replacing("ChatGPT:", with: ""))
+                                        .foregroundColor(.primary)
+                                        .padding(10)
+                                        .background(Color(UIColor.systemGray5))
+                                        .cornerRadius(10)
+                                        .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                                    
+                                }//Vstack
+                            }
                         }//else
                         
                     }//ForEach
+                    
+                    if responseWaiting{
+                        HStack{
+                            DotLoading().scaleEffect(0.3, anchor: .leading)
+                        }
+                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                    } else {
+                        VStack{
+                            Text("ChatGPT")
+                                .font(.system(size: 16.0))
+                                .foregroundColor(.green)
+                                .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                            //.padding(.bottom, -10)
+                            
+                            Text(viewModel.models.last?.replacing("ChatGPT:", with: "") ?? "")
+                                .foregroundColor(.primary)
+                                .padding(10)
+                                .background(Color(UIColor.systemGray5))
+                                .cornerRadius(10)
+                                .frame(width: UIScreen.main.bounds.width-20, alignment: .leading)
+                            
+                        }//Vstack
+                    }
+                    
                     Spacer().id(bottomID)
 
                 }//ScrollView
                 .onChange(of: viewModel.models.last) { _ in
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        responseWaiting = viewModel.responseWaiting
+                    }
                     proxy.scrollTo(bottomID)
-                    responseWaiting.toggle()
                 }
             }//ScrollViewReader
             
@@ -92,10 +119,10 @@ struct ContentView: View {
                         .stroke(.gray.opacity(0.6), lineWidth: 1.5))
                 
                 Button{
+                    responseWaiting = true
                     viewModel.sendApiRequest(text: text)
                     text = ""
                     self.hideKeyboard()
-                    responseWaiting = true
                 }label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.system(size: 35))
